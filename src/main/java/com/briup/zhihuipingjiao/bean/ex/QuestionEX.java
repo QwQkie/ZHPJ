@@ -7,7 +7,12 @@ import java.util.List;
 public class QuestionEX {
     private Integer id;
 
+
     private String name;
+
+    private String type;
+    private List<Options> options;
+
 
     public Integer getId() {
         return id;
@@ -33,9 +38,10 @@ public class QuestionEX {
         this.type = type;
     }
 
+
     
 
-    private String type;
+
 
     public List<Options> getOptions() {
         return options;
@@ -45,5 +51,7 @@ public class QuestionEX {
         this.options = options;
     }
 
-    private List<Options> options;
+
+
+
 }
