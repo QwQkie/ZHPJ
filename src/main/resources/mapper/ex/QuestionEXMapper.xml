@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.zhihuipingjiao.mapper.ex.QuestionEXMapper">
+    <resultMap id="abc" type="com.briup.zhihuipingjiao.bean.ex.QuestionEX">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="type" property="type"/>
+        <collection property="options" column="id" select="selectOptions" ofType="com.briup.zhihuipingjiao.bean.ex.OptionsEX"/>
+    </resultMap>
+    <select id="findAll" resultMap="abc">
+        select * from briup_question
+    </select>
+    <select id="selectOptions" resultType="com.briup.zhihuipingjiao.bean.ex.OptionsEX">
+    select * from briup_options where question_id=#{id}
+    </select>
+    <select id="search" resultMap="abc">
+        select * from briup_question where name like #{key}
+    </select>
+    <insert id="add">
+<selectKey resultType="int" keyColumn="id" keyProperty="id" order="AFTER">
+    select LAST_INSERT_ID()
+</selectKey>
+        insert into briup_question values (#{id},#{name},#{type})
+    </insert>
+</mapper>
