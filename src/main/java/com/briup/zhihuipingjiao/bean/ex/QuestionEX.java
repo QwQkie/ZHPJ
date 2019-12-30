@@ -8,7 +8,7 @@ public class QuestionEX {
     private Integer id;
     private String name;
     private String type;
-    private List<OptionsEX> options;
+    private List<Options> options;
 
     public Integer getId() {
         return id;
@@ -34,11 +34,11 @@ public class QuestionEX {
         this.type = type;
     }
 
-    public List<OptionsEX> getOptions() {
+    public List<Options> getOptions() {
         return options;
     }
 
-    public void setOptions(List<OptionsEX> options) {
+    public void setOptions(List<Options> options) {
         this.options = options;
     }
 }
