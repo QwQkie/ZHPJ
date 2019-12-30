@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.zhihuipingjiao.mapper.ex.QqnEXMapper">
+    <resultMap id="abnq1" type="com.briup.zhihuipingjiao.bean.ex.QqnEX">
+        <id column="id"  property="id" />
+        <result column="question_id"  property="questionId" />
+        <result column="questionnaire_id"  property="questionnaireId" />
+        <collection property="question"
+                    ofType="com.briup.zhihuipingjiao.bean.ex.QuestionEX"
+                    column="question_id"
+                    select="selectQuestion"></collection>
+    </resultMap>
+    <resultMap id="abnq2" type="com.briup.zhihuipingjiao.bean.ex.QuestionEX">
+        <id column="id"  property="id" />
+        <result column="name"  property="name" />
+        <result column="type"  property="type" />
+        <collection property="options"
+                    ofType="com.briup.zhihuipingjiao.bean.Options"
+                    column="id"
+                    select="selectOptions"></collection>
+    </resultMap>
+    <select id="selectById" resultMap="abnq1">
+       select * from briup_qqn where questionnaire_id = #{id}
+    </select>
+    <select id="selectQuestion" resultMap="abnq2">
+        select * from briup_question where id = #{id}
+    </select>
+    <select id="selectOptions" resultType="com.briup.zhihuipingjiao.bean.Options">
+        select * from briup_options where question_id = #{id}
+    </select>
+    <insert id="insertQuestion">
+        insert into briup_qqn values (#{id},#{questionId},#{questionnaireId})
+    </insert>
+</mapper>

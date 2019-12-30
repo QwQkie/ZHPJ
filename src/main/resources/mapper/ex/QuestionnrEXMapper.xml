@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.zhihuipingjiao.mapper.ex.QuestionnrEXMapper">
+    <insert id="insertQuestionnr">
+        <selectKey resultType="int" order="AFTER" keyProperty="id" keyColumn="id">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into briup_questionnaire values (#{id},#{name},#{description},#{date})
+    </insert>
+</mapper>
