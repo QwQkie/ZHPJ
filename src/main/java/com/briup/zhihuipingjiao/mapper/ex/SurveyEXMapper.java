@@ -7,4 +7,5 @@ import java.util.List;
 public interface SurveyEXMapper {
     List<SurveyEX> findAll();
     SurveyEX show(int id);
+    List<SurveyEX> search(String word);
 }

@@ -1,6 +1,5 @@
 package com.briup.zhihuipingjiao.web.controller;
 
-<<<<<<< HEAD
 import com.briup.zhihuipingjiao.bean.Survey;
 import com.briup.zhihuipingjiao.bean.ex.SurveyEX;
 import com.briup.zhihuipingjiao.service.ISurveyService;
@@ -76,18 +75,7 @@ public class SurveyController {
         }
         return MessageUtil.success();
     }
-    @GetMapping("/StartOrEnd")
-    @ApiOperation("zenggai")
-    public Message saveOrUpdate(Survey survey){
-        iSurveyService.saveOrUpdate(survey);
-        return  MessageUtil.success();
 
-    }
-    @GetMapping("/selectJindu")
-    public  Message selectJindu(int id){
-        Survey survey = iSurveyService.selectSurvey(id);
-        return MessageUtil.success(survey);
-    }
 }
 
 

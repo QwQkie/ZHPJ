@@ -10,6 +10,10 @@ public interface ISurveyService {
     SurveyEX show(int id) throws RuntimeException;
     void saveOrUpdate1(Survey survey) throws RuntimeException;
     void delete(int id)throws RuntimeException;
+    void saveOrUpdate(Survey survey) throws  RuntimeException;
+    Survey selectSurvey(int id) throws RuntimeException;
+
+
 
 
 }
