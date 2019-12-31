@@ -98,9 +98,6 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.briup.zhihuipingjiao.bean.Question">
-      <selectKey resultType="int" keyColumn="id" keyProperty="id" order="AFTER">
-          select LAST_INSERT_ID()
-      </selectKey>
     insert into briup_question (id, name, type
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}

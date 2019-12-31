@@ -1,7 +1,5 @@
 package com.briup.zhihuipingjiao.web.controller;
 
-import com.briup.zhihuipingjiao.bean.Qqn;
-import com.briup.zhihuipingjiao.bean.Question;
 import com.briup.zhihuipingjiao.bean.Questionnaire;
 import com.briup.zhihuipingjiao.bean.ex.QqnEX;
 import com.briup.zhihuipingjiao.bean.ex.QuestionnrEX;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -25,6 +22,7 @@ public class QuestionnairController {
     @GetMapping("/findAllqn")
     public Message findAllqn(){
         List<Questionnaire> list = iQuestionnaireService.findAllquestionnaire();
+        System.out.println(list);
         return MessageUtil.success(list);
     }
 
@@ -36,6 +34,7 @@ public class QuestionnairController {
 
     @PostMapping("/saveQuestionnr")
     public Message saveQuestionnr(QuestionnrEX questionnrEX,int[] ids){
+
         iQuestionnaireService.saveQuestipnnr(questionnrEX);
         QqnEX qqn = new QqnEX();
         for(int id:ids){
