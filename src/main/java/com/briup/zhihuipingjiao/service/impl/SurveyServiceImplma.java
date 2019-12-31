@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class SurveyServiceImpl implements ISurveyServicema {
+public class SurveyServiceImplma implements ISurveyServicema {
     @Autowired
     private SurveyEXmaMapper surveyEXMapper;
     @Override
