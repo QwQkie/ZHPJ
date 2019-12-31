@@ -6,6 +6,7 @@ import com.briup.zhihuipingjiao.bean.ex.QuestionnrEX;
 import com.briup.zhihuipingjiao.service.IQuestionnaireService;
 import com.briup.zhihuipingjiao.util.Message;
 import com.briup.zhihuipingjiao.util.MessageUtil;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@Api(description = "问卷管理")
 public class QuestionnairController {
 
     @Autowired
