@@ -1,13 +1,10 @@
-package com.briup.zhihuipingjiao.Service.Impl;
+package com.briup.zhihuipingjiao.service.impl;
 
-import com.briup.zhihuipingjiao.Service.ISurveyService;
+import com.briup.zhihuipingjiao.service.ISurveyService;
 import com.briup.zhihuipingjiao.bean.Survey;
-import com.briup.zhihuipingjiao.bean.ex.QqnEX;
 import com.briup.zhihuipingjiao.mapper.SurveyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class SurveyServiceImpl implements ISurveyService {

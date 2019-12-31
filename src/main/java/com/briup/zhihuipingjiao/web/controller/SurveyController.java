@@ -1,8 +1,7 @@
 package com.briup.zhihuipingjiao.web.controller;
 
-import com.briup.zhihuipingjiao.Service.ISurveyService;
+import com.briup.zhihuipingjiao.service.ISurveyService;
 import com.briup.zhihuipingjiao.bean.Survey;
-import com.briup.zhihuipingjiao.bean.ex.QqnEX;
 import com.briup.zhihuipingjiao.util.Message;
 import com.briup.zhihuipingjiao.util.MessageUtil;
 import io.swagger.annotations.Api;
@@ -11,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/survey")

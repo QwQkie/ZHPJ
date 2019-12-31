@@ -1,9 +1,6 @@
-package com.briup.zhihuipingjiao.Service;
+package com.briup.zhihuipingjiao.service;
 
 import com.briup.zhihuipingjiao.bean.Survey;
-import com.briup.zhihuipingjiao.bean.ex.QqnEX;
-
-import java.util.List;
 
 public interface ISurveyService {
     void saveOrUpdate(Survey survey) throws  RuntimeException;
