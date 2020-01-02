@@ -20,9 +20,9 @@ import java.util.List;
 @RequestMapping("/survey")
 @Api(description = "课调管理")
 public class SurveyController {
-
     @Autowired
-    private ISurveyService iSurveyService;
+   private ISurveyService iSurveyService;
+
     @GetMapping("/findAll")
     @ApiOperation(value = "查询所有课调")
     public Message findAll(){
