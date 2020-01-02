@@ -13,19 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
-
-import com.briup.zhihuipingjiao.service.ISurveyService;
-import com.briup.zhihuipingjiao.bean.Survey;
-import com.briup.zhihuipingjiao.util.Message;
-import com.briup.zhihuipingjiao.util.MessageUtil;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
@@ -50,6 +38,7 @@ public class SurveyController {
     @PostMapping("/add")
     @ApiOperation(value = "添加课调")
     public Message add(Survey survey){
+        survey.setCode((int)(Math.random()*9000+1000));
         iSurveyService.saveOrUpdate1(survey);
         return MessageUtil.success();
     }

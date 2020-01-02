@@ -1,5 +1,6 @@
 package com.briup.zhihuipingjiao.bean;
 
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -10,7 +11,9 @@ public class Survey implements Serializable {
 
     private String status;
 
+    @ApiModelProperty(hidden = true)
     private Integer code;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date surveyday;
 
